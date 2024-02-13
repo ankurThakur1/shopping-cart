@@ -1,0 +1,119 @@
+.card{
+    flex: 1 0 23%;
+    /* flex-basis: 23%; */
+    padding: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    position: relative;
+    border-radius: 6px;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid rgb(221, 221, 221);
+}
+.card:hover{
+    transform: scale(1.05);
+}
+.image{
+    width: 100%;
+    height: 220px;
+    /* background: orange; */
+}
+.image img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.card .category{
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 500;
+    position: absolute;
+    top: 20px;
+    right: 23px;
+    z-index: 1;
+}
+.card .category::before{
+    content: "";
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    width: 100%;
+    height: 100%;
+    background: orange;
+    padding: 0.8rem;
+    border-radius: 5px;
+    transform: skewX(-20deg);
+    z-index: -1;
+}
+.details{
+    margin: 1rem 0;
+    /* padding: 0.8rem; */
+}
+.details .title{
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+    color: rgb(59, 59, 59);
+}
+.details .rating{
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.3rem 0.5rem;
+    border-radius: 3px;
+    /* background: var(--secondary-color); */
+    border: 1px solid rgb(221, 221, 221);
+    /* margin-bottom: 0.8rem; */
+}
+.details .rating.good{
+    color: #39A97C;
+}
+.details .rating.medium{
+    color: #fdc200;
+}
+.details .rating.bad{
+    color: red;
+}
+.details .price{
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 0.8rem;
+    color: rgb(44, 44, 44);
+}
+
+
+
+/* Responsive Css */
+@media screen and (max-width: 786px) {
+    .card{
+        flex: 1 0 100%;
+        /* flex-basis: 100%; */
+        padding: 0.6rem;
+    }
+    .image{
+        height: 180px;
+        /* border: 2px solid black; */
+    }
+    .card .category{
+        font-size: 0.9rem;
+        top: 18px;
+        right: 25px;
+    }
+    .card .category::before{
+        top: -10px;
+        background: var(--primary-color);
+        padding: 0.7rem;
+    }
+    .details{
+        margin: 1.2rem 0;
+    }
+    .details .title{
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+    .details .rating{
+        font-size: 1.2rem;
+    }
+    .details .price{
+        font-size: 1.4rem;
+        margin-top: 1rem;
+    }
+}
